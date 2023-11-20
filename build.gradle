@@ -1,29 +1,35 @@
 buildscript {
     repositories {
+        mavenLocal()
+        mavenCentral()
         maven { url "https://repo.grails.org/grails/core" }
+        maven { url 'https://repo.gradle.org/gradle/libs-releases' }
     }
     dependencies {
-        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.asciidoctor:asciidoctor-gradle-jvm:3.3.2"
     }
 }
 
 version project.projectVersion
-group "org.grails.plugins"
+group "org.grails"
 
-apply plugin:"eclipse"
-apply plugin:"idea"
-apply plugin:"java-library"
-apply plugin:"org.grails.grails-plugin"
-apply plugin:"org.grails.internal.grails-plugin-publish"
-apply plugin:"org.grails.grails-gsp"
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "java-library"
+apply plugin: "org.grails.grails-plugin"
+apply plugin: "org.grails.internal.grails-plugin-publish"
+apply plugin: "org.grails.grails-gsp"
 apply plugin: "org.asciidoctor.jvm.convert"
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
+    mavenLocal()
+    mavenCentral()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url 'https://repo.gradle.org/gradle/libs-releases' }
 }
 
 dependencyManagement {
@@ -39,6 +45,7 @@ configurations {
 
 dependencies {
     api "org.liquibase:liquibase-core:$liquibaseVersion"
+    api "org.codehaus.groovy:groovy-sql:$groovyVersion"
 
     api("org.liquibase.ext:liquibase-hibernate5:$liquibaseHibernateVersion") {
         exclude group: 'org.hibernate', module: 'hibernate-core'
@@ -58,8 +65,7 @@ dependencies {
     compileOnly "org.springframework.boot:spring-boot-autoconfigure"
     compileOnly "org.springframework.boot:spring-boot-starter-tomcat"
 
-    compileOnly "org.grails:grails-web-boot"
-    compileOnly "org.grails:grails-dependencies"
+    compileOnly "org.grails:grails-boot"
     compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
     compileOnly "org.grails.plugins:hibernate5"
 
@@ -67,16 +73,17 @@ dependencies {
     testImplementation "org.hibernate:hibernate-core:5.6.15.Final"
     testImplementation "org.grails.plugins:hibernate5"
 
-    testImplementation "org.grails:grails-gorm-testing-support"
+    testImplementation "org.grails:grails-test-support"
     testImplementation "org.mockito:mockito-core"
-    testImplementation "org.grails:grails-web-testing-support"
     testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
 
+    documentation "org.fusesource.jansi:jansi:1.18"
+    documentation "com.github.javaparser:javaparser-core:3.15.14"
+    documentation "org.codehaus.groovy:groovy:$groovyVersion"
     documentation "org.codehaus.groovy:groovy:$groovyVersion"
     documentation "org.codehaus.groovy:groovy-ant:$groovyVersion"
     documentation "org.codehaus.groovy:groovy-templates:$groovyVersion"
-
 }
 
 grailsPublish {
@@ -87,7 +94,7 @@ grailsPublish {
     }
     title = "Grails Database Migration Plugin"
     desc = "Grails Database Migration Plugin"
-    developers = [kazukiyamamoto: "Kazuki YAMAMOTO"]
+    developers = [kazukiyamamoto: "Kazuki YAMAMOTO", "Michael Yan"]
 }
 
 asciidoctor {
