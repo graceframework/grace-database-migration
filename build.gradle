@@ -94,7 +94,7 @@ grailsPublish {
     }
     title = "Grails Database Migration Plugin"
     desc = "Grails Database Migration Plugin"
-    developers = [kazukiyamamoto: "Kazuki YAMAMOTO", "Michael Yan"]
+    developers = [kazukiyamamoto: "Kazuki YAMAMOTO", rainboyan: "Michael Yan"]
 }
 
 asciidoctor {
