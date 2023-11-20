@@ -15,11 +15,10 @@
  */
 package databasemigration
 
-import grails.boot.GrailsApp
-import grails.boot.config.GrailsAutoConfiguration
+import grails.boot.Grails
 
-class Application extends GrailsAutoConfiguration {
+class Application {
     static void main(String[] args) {
-        GrailsApp.run(Application)
+        Grails.run(Application)
     }
 }
