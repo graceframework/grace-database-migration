@@ -1,36 +1,37 @@
 buildscript {
-    repositories {
-        maven { url "https://repo.grails.org/grails/core" }
-    }
-    dependencies {
-        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+	repositories {
+		mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://repo.gradle.org/gradle/libs-releases' }
+	}
+	dependencies {
+		classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+        classpath "io.github.gradle-nexus:publish-plugin:1.3.0"
         classpath "org.asciidoctor:asciidoctor-gradle-jvm:3.3.2"
-    }
+	}
 }
+
+ext."signing.keyId" = project.hasProperty("signing.keyId") ? project.getProperty('signing.keyId') : System.getenv('SIGNING_KEY')
+ext."signing.password" = project.hasProperty("signing.password") ? project.getProperty('signing.password') : System.getenv('SIGNING_PASSPHRASE')
+ext."signing.secretKeyRingFile" = project.hasProperty("signing.secretKeyRingFile") ? project.getProperty('signing.secretKeyRingFile') : ("${System.properties['user.home']}${File.separator}.gnupg${File.separator}secring.gpg")
+ext.isReleaseVersion = !projectVersion.endsWith("SNAPSHOT")
 
 version project.projectVersion
-group "org.grails.plugins"
+group "org.graceframework.plugins"
 
-apply plugin:"eclipse"
-apply plugin:"idea"
-apply plugin:"java-library"
-apply plugin:"org.grails.grails-plugin"
-apply plugin:"org.grails.internal.grails-plugin-publish"
-apply plugin:"org.grails.grails-gsp"
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "java-library"
+apply plugin: "org.grails.grails-plugin"
+apply plugin: "org.grails.grails-gsp"
+apply plugin: "io.github.gradle-nexus.publish-plugin"
+apply plugin: "maven-publish"
+apply plugin: "signing"
 apply plugin: "org.asciidoctor.jvm.convert"
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 repositories {
-    maven { url "https://repo.grails.org/grails/core" }
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.grails:grails-bom:$grailsVersion"
-    }
-    applyMavenExclusions false
+	mavenCentral()
+    maven { url "https://repo.gradle.org/gradle/libs-releases" }
 }
 
 configurations {
@@ -39,7 +40,6 @@ configurations {
 
 dependencies {
     api "org.liquibase:liquibase-core:$liquibaseVersion"
-
     api("org.liquibase.ext:liquibase-hibernate5:$liquibaseHibernateVersion") {
         exclude group: 'org.hibernate', module: 'hibernate-core'
         exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
@@ -48,9 +48,10 @@ dependencies {
         exclude group: 'org.liquibase', module: 'liquibase-test-harness'
         exclude group: 'com.h2database', module: 'h2'
     }
-    api("org.grails:grails-shell") {
+    api("org.graceframework:grace-shell:$graceVersion") {
         exclude group: 'org.slf4j', module: 'slf4j-simple'
     }
+    api("org.codehaus.groovy:groovy-sql:$groovyVersion")
     compileOnly "org.hibernate:hibernate-core:5.6.15.Final"
 
     compileOnly 'org.springframework.boot:spring-boot-starter-logging'
@@ -58,71 +59,44 @@ dependencies {
     compileOnly "org.springframework.boot:spring-boot-autoconfigure"
     compileOnly "org.springframework.boot:spring-boot-starter-tomcat"
 
-    compileOnly "org.grails:grails-web-boot"
-    compileOnly "org.grails:grails-dependencies"
+    compileOnly "org.graceframework:grace-boot:$graceVersion"
     compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
-    compileOnly "org.grails.plugins:hibernate5"
+    compileOnly "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
 
     testImplementation "org.springframework.boot:spring-boot-starter-tomcat"
     testImplementation "org.hibernate:hibernate-core:5.6.15.Final"
     testImplementation "org.grails.plugins:hibernate5"
 
-    testImplementation "org.grails:grails-gorm-testing-support"
+    testImplementation "org.graceframework:grace-test-support"
     testImplementation "org.mockito:mockito-core"
-    testImplementation "org.grails:grails-web-testing-support"
-    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    testImplementation 'com.h2database:h2:1.4.200'
 
-
+    documentation "org.fusesource.jansi:jansi:1.18"
+	documentation "com.github.javaparser:javaparser-core:3.15.14"
     documentation "org.codehaus.groovy:groovy:$groovyVersion"
     documentation "org.codehaus.groovy:groovy-ant:$groovyVersion"
     documentation "org.codehaus.groovy:groovy-templates:$groovyVersion"
-
+    documentation "org.codehaus.groovy:groovy-xml:$groovyVersion"
 }
 
-grailsPublish {
-    userOrg = "grails"
-    githubSlug = 'grails-plugins/grails-database-migration'
-    license {
-        name = 'Apache-2.0'
-    }
-    title = "Grails Database Migration Plugin"
-    desc = "Grails Database Migration Plugin"
-    developers = [kazukiyamamoto: "Kazuki YAMAMOTO"]
+bootJar.enabled = false
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
-asciidoctor {
-    baseDirFollowsSourceFile()
-    outputDir = "$buildDir/asciidoc"
-
-    resources {
-        from('src/docs/images')
-        into "./images"
-    }
-
-    attributes 'experimental'  : 'true',
-            'compat-mode'   : 'true',
-            'toc'           : 'left',
-            'icons'         : 'font',
-            'version'       : project.version,
-            'groupId'       : project.group,
-            'artifactId'    : project.name,
-            'sourcedir'     : "${projectDir}/src/main/groovy",
-            'liquibaseVersion': liquibaseVersion
-}
-
-tasks.withType(GroovyCompile) {
-    configure(groovyOptions) {
-        forkOptions.jvmArgs = ['-Xmx1024m']
-    }
-}
-
-tasks.withType(Test) {
-    useJUnitPlatform()
+jar {
+    enabled = true
+    archiveClassifier.set('')
 }
 
 tasks.withType(Groovydoc) {
     configure {
-        docTitle = "Grails Database Migration Plugin ${version}"
+        docTitle = "Grace Database Migration Plugin ${version}"
         source = project.files('src/main/groovy')
         destinationDir = new File(buildDir, 'docs/api')
         classpath = configurations.documentation
@@ -136,25 +110,69 @@ task docs(type:Copy, group: 'documentation')  {
     into "$buildDir/docs"
 }
 
-jar {
-    exclude "testapp/**/**"
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.name
+            version = project.version
+
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+
+            from components.java
+
+            pom {
+                name = "Grace Database Migration Plugin"
+                description = "Grace Database Migration"
+                url = 'https://github.com/graceframework/grace-database-migration'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'rainboyan'
+                        name = 'Michael Yan'
+                        email = 'rain@rainboyan.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/graceframework/grace-database-migration.git'
+                    developerConnection = 'scm:git:ssh://github.com:graceframework/grace-database-migration.git'
+                    url = 'https://github.com/graceframework/grace-database-migration/tree/5.0.x'
+                }
+            }
+        }
+    }
 }
 
-test {
-    testLogging {
-        events "passed", "skipped", "failed"
-
-        showExceptions true
-        exceptionFormat "full"
-        showCauses true
-        showStackTraces true
-    }
-    retry {
-        maxRetries = 2
-        maxFailures = 20
-        failOnPassedAfterRetry = true
-        filter {
-            excludeClasses.add("*GroovyChangeLogSpec")
+nexusPublishing {
+    repositories {
+        sonatype {
+            def ossUser = System.getenv("SONATYPE_USERNAME") ?: project.hasProperty("sonatypeOssUsername") ? project.sonatypeOssUsername : ''
+            def ossPass = System.getenv("SONATYPE_PASSWORD") ?: project.hasProperty("sonatypeOssPassword") ? project.sonatypeOssPassword : ''
+            def ossStagingProfileId = System.getenv("SONATYPE_STAGING_PROFILE_ID") ?: project.hasProperty("sonatypeOssStagingProfileId") ? project.sonatypeOssStagingProfileId : ''
+            nexusUrl = uri("https://s01.oss.sonatype.org/service/local/")
+            snapshotRepositoryUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            username = ossUser
+            password = ossPass
+            stagingProfileId = ossStagingProfileId
         }
+    }
+}
+
+afterEvaluate {
+    signing {
+        required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
+        sign publishing.publications.maven
     }
 }
