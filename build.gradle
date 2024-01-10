@@ -67,7 +67,7 @@ dependencies {
     testImplementation "org.hibernate:hibernate-core:5.6.15.Final"
     testImplementation "org.grails.plugins:hibernate5"
 
-    testImplementation "org.graceframework:grace-test-support"
+    testImplementation "org.graceframework:grace-test-support:$graceVersion"
     testImplementation "org.mockito:mockito-core"
     testImplementation 'com.h2database:h2:1.4.200'
 
