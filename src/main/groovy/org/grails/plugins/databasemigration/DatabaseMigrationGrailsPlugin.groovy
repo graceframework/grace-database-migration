@@ -29,19 +29,19 @@ class DatabaseMigrationGrailsPlugin extends Plugin {
 
     static final String CONFIG_MAIN_PREFIX = 'grails.plugin.databasemigration'
 
-    def grailsVersion = "3.0.0.BUILD-SNAPSHOT > *"
+    def grailsVersion = "2020.0.0 > *"
     def pluginExcludes = [
             "**/testapp/**",
             "grails-app/views/error.gsp"
     ]
 
-    def title = "Grails Database Migration Plugin" // Headline display name of the plugin
-    def author = "Kazuki YAMAMOTO"
-    def authorEmail = "yam.kazuki@gmail.com"
-    def description = 'Grails Database Migration Plugin'
-    def documentation = "http://grails.org/plugin/database-migration"
+    def title = "Grace Database Migration Plugin" // Headline display name of the plugin
+    def author = "Michael Yan"
+    def authorEmail = "rain@rainboyan.com"
+    def description = 'Grace Database Migration Plugin'
+    def documentation = "http://graceframework.org/plugin/database-migration"
     def license = "APACHE"
-    def scm = [url: "https://github.com/grails-plugins/grails-database-migration"]
+    def scm = [url: "https://github.com/graceframework/grace-database-migration"]
 
     @Override
     Closure doWithSpring() {
