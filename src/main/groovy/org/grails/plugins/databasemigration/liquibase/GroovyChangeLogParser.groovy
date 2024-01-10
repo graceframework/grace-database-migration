@@ -16,7 +16,6 @@
 package org.grails.plugins.databasemigration.liquibase
 
 import grails.config.ConfigMap
-import grails.io.IOUtils
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import liquibase.changelog.ChangeLogParameters
@@ -26,6 +25,7 @@ import liquibase.parser.core.xml.AbstractChangeLogParser
 import liquibase.resource.ResourceAccessor
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.springframework.context.ApplicationContext
+import org.grails.io.support.SpringIOUtils
 
 import static org.grails.plugins.databasemigration.PluginConstants.DATA_SOURCE_NAME_KEY
 
@@ -44,10 +44,10 @@ class GroovyChangeLogParser extends AbstractChangeLogParser {
         def inputStream = null
         def changeLogText = null
         try {
-            inputStream = resourceAccessor.openStreams(null, physicalChangeLogLocation).first()
+            inputStream = resourceAccessor.openStreams(null, physicalChangeLogLocation)?.first()
             changeLogText = inputStream?.text
         } finally {
-            IOUtils.closeQuietly(inputStream)
+            SpringIOUtils.closeQuietly(inputStream)
         }
 
         CompilerConfiguration compilerConfiguration = new CompilerConfiguration(CompilerConfiguration.DEFAULT)
