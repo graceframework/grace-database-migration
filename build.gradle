@@ -65,6 +65,7 @@ dependencies {
 
     testImplementation "org.springframework.boot:spring-boot-starter-tomcat"
     testImplementation "org.hibernate:hibernate-core:$HibernateCoreVersion"
+    testImplementation "org.graceframework:grace-shell:$graceVersion"
     testImplementation "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
 
     testImplementation "org.graceframework:grace-test-support:$graceVersion", {
