@@ -48,9 +48,7 @@ dependencies {
         exclude group: 'org.liquibase', module: 'liquibase-test-harness'
         exclude group: 'com.h2database', module: 'h2'
     }
-    compileOnly("org.graceframework:grace-shell") {
-        exclude group: 'org.slf4j', module: 'slf4j-simple'
-    }
+    compileOnly("org.graceframework:grace-cli")
     api("org.codehaus.groovy:groovy-sql:$groovyVersion")
     api "org.hibernate:hibernate-core:$HibernateCoreVersion"
 
