@@ -50,7 +50,7 @@ dependencies {
     }
     compileOnly("org.graceframework:grace-cli")
     api("org.apache.groovy:groovy-sql:$groovyVersion")
-    api "org.hibernate:hibernate-core:$HibernateCoreVersion"
+    api "org.hibernate:hibernate-core-jakarta:$HibernateCoreVersion"
 
     compileOnly 'org.springframework.boot:spring-boot-starter-logging'
     compileOnly "org.springframework.boot:spring-boot-starter-actuator"
@@ -62,7 +62,7 @@ dependencies {
     compileOnly "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
 
     testImplementation "org.springframework.boot:spring-boot-starter-tomcat"
-    testImplementation "org.hibernate:hibernate-core:$HibernateCoreVersion"
+    testImplementation "org.hibernate:hibernate-core-jakarta:$HibernateCoreVersion"
     testImplementation "org.graceframework:grace-shell"
     testImplementation "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
 
