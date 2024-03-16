@@ -58,7 +58,7 @@ dependencies {
     compileOnly "org.springframework.boot:spring-boot-starter-tomcat"
 
     compileOnly "org.graceframework:grace-boot"
-    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     compileOnly "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
 
     testImplementation "org.springframework.boot:spring-boot-starter-tomcat"
@@ -80,8 +80,8 @@ dependencies {
 
 bootJar.enabled = false
 
-sourceCompatibility = 11
-targetCompatibility = 11
+sourceCompatibility = 17
+targetCompatibility = 17
 
 java {
     withJavadocJar()
