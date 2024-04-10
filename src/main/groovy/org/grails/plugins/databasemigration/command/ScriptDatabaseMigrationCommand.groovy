@@ -16,12 +16,12 @@
 package org.grails.plugins.databasemigration.command
 
 import grails.config.ConfigMap
-import grails.dev.commands.ExecutionContext
 import grails.util.Environment
 import grails.util.GrailsNameUtils
 import groovy.transform.CompileStatic
 import liquibase.parser.ChangeLogParser
 import liquibase.parser.ChangeLogParserFactory
+import org.grails.cli.profile.ExecutionContext
 import org.grails.config.CodeGenConfig
 import org.grails.plugins.databasemigration.EnvironmentAwareCodeGenConfig
 import org.grails.plugins.databasemigration.liquibase.GroovyChangeLogParser
@@ -37,7 +37,7 @@ trait ScriptDatabaseMigrationCommand implements DatabaseMigrationCommand {
 
     void handle(ExecutionContext executionContext) {
         this.executionContext = executionContext
-        // setConfig(executionContext.config)
+        setConfig(executionContext.config)
 
         this.commandLine = executionContext.commandLine
         this.contexts = optionValue('contexts')
