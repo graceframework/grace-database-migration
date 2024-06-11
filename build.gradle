@@ -63,12 +63,12 @@ dependencies {
 
     compileOnly "org.graceframework:grace-boot"
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
-    compileOnly "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
+    compileOnly "org.graceframework.plugins:hibernate:$graceHibernatePluginVersion"
 
     testImplementation "org.springframework.boot:spring-boot-starter-tomcat"
     testImplementation "org.hibernate:hibernate-core-jakarta:$HibernateCoreVersion"
     testImplementation "org.graceframework:grace-shell"
-    testImplementation "org.graceframework.plugins:hibernate5:$graceHibernatePluginVersion"
+    testImplementation "org.graceframework.plugins:hibernate:$graceHibernatePluginVersion"
 
     testImplementation "org.graceframework:grace-test-support"
     testImplementation "org.mockito:mockito-core"
