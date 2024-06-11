@@ -45,7 +45,7 @@ class DbmCreateChangelog implements ScriptDatabaseMigrationCommand {
         ChangeLogSerializer serializer = ChangeLogSerializerFactory.instance.getSerializer(filename)
 
         outputChangeLogFile.withOutputStream { OutputStream out ->
-            serializer.write(new ArrayList(), out)
+            serializer.write(new ArrayList<>(), out)
         }
 
         if (hasOption('add')) {
