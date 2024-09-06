@@ -29,7 +29,7 @@ class DatabaseMigrationGrailsPlugin extends Plugin {
 
     static final String CONFIG_MAIN_PREFIX = 'grails.plugin.databasemigration'
 
-    def grailsVersion = "2020.0.0 > *"
+    def grailsVersion = "2023.0.0 > *"
     def pluginExcludes = [
             "**/testapp/**",
             "grails-app/views/error.gsp"
