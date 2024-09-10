@@ -18,6 +18,7 @@ One popular approach is to have a root changelog named changlog.groovy (or chang
 
 ## Versions
 
+* 6.1.x Grace 2023.1.x
 * 6.0.x Grace 2023.0.x
 
 ## Links
