@@ -41,7 +41,10 @@ configurations {
 }
 
 dependencies {
-    api "org.liquibase:liquibase-core:$liquibaseVersion"
+    api "org.liquibase:liquibase-core:$liquibaseVersion", {
+        exclude group: 'javax.xml.bind', module: 'jaxb-api'
+        exclude group: 'com.opencsv', module: 'opencsv'
+    }
     api("org.liquibase.ext:liquibase-hibernate5:$liquibaseHibernateVersion") {
         exclude group: 'org.hibernate', module: 'hibernate-core'
         exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
