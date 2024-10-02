@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 original authors
+ * Copyright 2015-2024 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,17 +19,21 @@ import groovy.transform.CompileStatic
 import liquibase.Scope
 import liquibase.command.CommandResultsBuilder
 import liquibase.command.CommandScope
-import liquibase.command.core.InternalGenerateChangelogCommandStep
+import liquibase.command.core.DiffCommandStep
+import liquibase.command.core.GenerateChangelogCommandStep
 import liquibase.command.core.InternalSnapshotCommandStep
+import liquibase.command.core.helpers.DiffOutputControlCommandStep
 import liquibase.database.Database
 import liquibase.database.ObjectQuotingStrategy
 import liquibase.diff.DiffResult
+import liquibase.diff.output.DiffOutputControl
 import liquibase.diff.output.changelog.DiffToChangeLog
 import liquibase.serializer.ChangeLogSerializerFactory
 import liquibase.util.StringUtil
+import liquibase.command.core.helpers.ReferenceDbUrlConnectionCommandStep
 
 @CompileStatic
-class GroovyGenerateChangeLogCommandStep extends InternalGenerateChangelogCommandStep {
+class GroovyGenerateChangeLogCommandStep extends GenerateChangelogCommandStep {
 
     public static final String[] COMMAND_NAME = new String[] {"groovyGenerateChangeLog"};
 
@@ -42,21 +46,21 @@ class GroovyGenerateChangeLogCommandStep extends InternalGenerateChangelogComman
     void run(CommandResultsBuilder resultsBuilder) throws Exception {
         CommandScope commandScope = resultsBuilder.getCommandScope();
 
-        outputBestPracticeMessage();
-
         String changeLogFile = StringUtil.trimToNull(commandScope.getArgumentValue(CHANGELOG_FILE_ARG));
         if (changeLogFile != null && changeLogFile.toLowerCase().endsWith(".sql")) {
             Scope.getCurrentScope().getUI().sendMessage("\n" + INFO_MESSAGE + "\n");
             Scope.getCurrentScope().getLog(getClass()).info("\n" + INFO_MESSAGE + "\n");
         }
 
-        final Database referenceDatabase = commandScope.getArgumentValue(REFERENCE_DATABASE_ARG);
+        final Database referenceDatabase = commandScope.getArgumentValue(ReferenceDbUrlConnectionCommandStep.REFERENCE_DATABASE_ARG);
 
         InternalSnapshotCommandStep.logUnsupportedDatabase(referenceDatabase, this.getClass());
 
-        DiffResult diffResult = createDiffResult(commandScope);
+        DiffOutputControl diffOutputControl = (DiffOutputControl) resultsBuilder.getResult(DiffOutputControlCommandStep.DIFF_OUTPUT_CONTROL.getName())
 
-        DiffToChangeLog changeLogWriter = new DiffToChangeLog(diffResult, commandScope.getArgumentValue(DIFF_OUTPUT_CONTROL_ARG));
+        DiffResult diffResult = (DiffResult) resultsBuilder.getResult(DiffCommandStep.DIFF_RESULT.getName())
+
+        DiffToChangeLog changeLogWriter = new DiffToChangeLog(diffResult, diffOutputControl)
 
         changeLogWriter.setChangeSetAuthor(commandScope.getArgumentValue(AUTHOR_ARG));
         changeLogWriter.setChangeSetContext(commandScope.getArgumentValue(CONTEXT_ARG));
