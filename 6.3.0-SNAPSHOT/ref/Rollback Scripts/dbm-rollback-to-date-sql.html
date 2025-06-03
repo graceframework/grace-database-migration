@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>Grace Database Migration Plugin 6.3.0-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass(el) {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+    <style>
+        .contribute-btn {
+            bottom: 0px;
+        }
+    </style>
+</head>
+
+<body class="body" onload="addJsClass();">
+
+<div id="navigation">
+    <div class="navHeader">
+        
+        <span id="logo">
+            <a href="https://graceframework.org" title="Go to Grace Framework Website">
+                <img src="../../img/grace.svg" alt="Grace Framework" />
+            </a>
+        </span>
+        
+        <div class="docHeader">
+            <h1 class="docTitle">Grace Database Migration Plugin</h1>
+            <h3 class="docSubTitle">Helps you manage database changes while developing Grace applications</h3>
+        </div>
+    </div>
+
+    <div class="navLinks">
+        <ul>
+            <li>
+                <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                    <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                    <div id="nav-summary-childs">
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/gettingStarted.html"><strong>2</strong><span>Getting Started</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/configuration.html"><strong>3</strong><span>Configuration</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/generalUsage.html"><strong>4</strong><span>General Usage</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/groovyChanges.html"><strong>5</strong><span>Groovy Changes</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/groovyPreconditions.html"><strong>6</strong><span>Groovy Preconditions</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/gorm.html"><strong>7</strong><span>GORM Support</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../../guide/dbdoc.html"><strong>8</strong><span>DbDoc Controller</span></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="separator selected">
+                <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+            </li>
+            <li class="separator selected">
+                <a id="ref-button" href="../../api/index.html">API Docs</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<table id="colset" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="reference corner-all">
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+                
+                <div class='contribute-btn'>
+                    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/ref/Rollback Scripts/dbm-rollback-to-date-sql.adoc"'>
+                        <i class='fa fa-pencil-square-o'></i> Improve this doc
+                    </button>
+                </div>
+                
+
+                <div class="sect1">
+<h2 id="_dbm_rollback_to_date_sql">dbm-rollback-to-date-sql</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_purpose">Purpose</h3>
+<div class="paragraph">
+<p>Writes SQL to roll back the database to the state it was in at the given date/time to STDOUT or a file.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_description">Description</h3>
+<div class="paragraph">
+<p>You can specify just the date, or the date and time. The date format must be <code>yyyy-MM-dd</code> and the time format must be <code>HH:mm:ss</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">grace &lt;&lt;environment&gt;&gt; dbm-rollback-to-date-sql &lt;&lt;date&gt;&gt; &lt;&lt;time&gt;&gt; &lt;&lt;filename&gt;&gt; --contexts=&lt;&lt;contexts&gt;&gt; --defaultSchema=&lt;&lt;defaultSchema&gt;&gt; --dataSource=&lt;&lt;dataSource&gt;&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Required arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>date</code> - The rollback date</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Optional arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>time</code> - The rollback time</p>
+</li>
+<li>
+<p><code>filename</code> - The path to the output file to write to. If not specified output is written to the console</p>
+</li>
+<li>
+<p><code>contexts</code> - A comma-delimited list of <a href="http://www.liquibase.org/manual/contexts">context</a> names. If specified, only changesets tagged with one of the context names will be included</p>
+</li>
+<li>
+<p><code>defaultSchema</code> - The default schema name to use</p>
+</li>
+<li>
+<p><code>dataSource</code> - if provided will run the script for the specified dataSource.  Not needed for the default dataSource.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that the <code>contexts</code>, <code>defaultSchema</code>, <code>dataSource</code> parameter name and value must be quoted if executed in Windows, e.g.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-rollback-to-date-sql <span class="string"><span class="delimiter">&quot;</span><span class="content">--contexts=&lt;&lt;contexts&gt;&gt;</span><span class="delimiter">&quot;</span></span> <span class="string"><span class="delimiter">&quot;</span><span class="content">--defaultSchema=&lt;&lt;defaultSchema&gt;&gt;</span><span class="delimiter">&quot;</span></span> <span class="string"><span class="delimiter">&quot;</span><span class="content">--dataSource=&lt;&lt;dataSource&gt;&gt;</span><span class="delimiter">&quot;</span></span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For the <code>dataSource</code> parameter, if the data source is configured as <code>reports</code> underneath the <code>dataSources</code> key in <code>application.[yml|groovy]</code>,
+the value should be <code>reports</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy">--dataSource=reports</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-block">
+                        <h1 class="menu-title" onclick="toggleRef(nextElement(this))">Diff Scripts</h1>
+                        <div class="menu-sub">
+                            
+                            
+                            <div class="menu-item"><a href="../../ref/Diff%20Scripts/dbm-diff.html">dbm-diff</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Diff%20Scripts/dbm-gorm-diff.html">dbm-gorm-diff</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-block">
+                        <h1 class="menu-title" onclick="toggleRef(nextElement(this))">Documentation Scripts</h1>
+                        <div class="menu-sub">
+                            
+                            
+                            <div class="menu-item"><a href="../../ref/Documentation%20Scripts/dbm-db-doc.html">dbm-db-doc</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-block">
+                        <h1 class="menu-title" onclick="toggleRef(nextElement(this))">Maintenance Scripts</h1>
+                        <div class="menu-sub">
+                            
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-add-migration.html">dbm-add-migration</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-changelog-sync-sql.html">dbm-changelog-sync-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-changelog-sync.html">dbm-changelog-sync</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-changelog-to-groovy.html">dbm-changelog-to-groovy</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-clear-checksums.html">dbm-clear-checksums</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-create-changelog.html">dbm-create-changelog</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-drop-all.html">dbm-drop-all</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-list-locks.html">dbm-list-locks</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-list-tags.html">dbm-list-tags</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-mark-next-changeset-ran.html">dbm-mark-next-changeset-ran</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-register-changelog.html">dbm-register-changelog</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-release-locks.html">dbm-release-locks</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-status.html">dbm-status</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-tag.html">dbm-tag</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Maintenance%20Scripts/dbm-validate.html">dbm-validate</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-block">
+                        <h1 class="menu-title" onclick="toggleRef(nextElement(this))">Rollback Scripts</h1>
+                        <div class="menu-sub selected">
+                            
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-future-rollback-sql.html">dbm-future-rollback-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-generate-changelog.html">dbm-generate-changelog</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-generate-gorm-changelog.html">dbm-generate-gorm-changelog</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-rollback-count-sql.html">dbm-rollback-count-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-rollback-count.html">dbm-rollback-count</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-rollback-sql.html">dbm-rollback-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-rollback-to-date-sql.html">dbm-rollback-to-date-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-rollback-to-date.html">dbm-rollback-to-date</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Rollback%20Scripts/dbm-rollback.html">dbm-rollback</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-block">
+                        <h1 class="menu-title" onclick="toggleRef(nextElement(this))">Update Scripts</h1>
+                        <div class="menu-sub">
+                            
+                            
+                            <div class="menu-item"><a href="../../ref/Update%20Scripts/dbm-previous-changeset-sql.html">dbm-previous-changeset-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Update%20Scripts/dbm-update-count-sql.html">dbm-update-count-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Update%20Scripts/dbm-update-count.html">dbm-update-count</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Update%20Scripts/dbm-update-sql.html">dbm-update-sql</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Update%20Scripts/dbm-update.html">dbm-update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright &copy; 2022-2025 Michael Yan and the original authors. The content is licensed under a Creative Commons Attribution 4.0 International (CC BY SA 4.0) license.
+    
+</div>
+
+
+<script type="text/javascript" src="../../js/docs.js"></script>
+
+</body>
+</html>
