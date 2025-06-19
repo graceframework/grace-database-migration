@@ -40,19 +40,21 @@ function addJsClass(el) {
                                 
                                 <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#gettingStarted"><strong>2</strong><span>Getting Started</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#releases"><strong>2</strong><span>Release History</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#configuration"><strong>3</strong><span>Configuration</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#gettingStarted"><strong>3</strong><span>Getting Started</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#generalUsage"><strong>4</strong><span>General Usage</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#configuration"><strong>4</strong><span>Configuration</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#groovyChanges"><strong>5</strong><span>Groovy Changes</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#generalUsage"><strong>5</strong><span>General Usage</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#groovyPreconditions"><strong>6</strong><span>Groovy Preconditions</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#groovyChanges"><strong>6</strong><span>Groovy Changes</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#gorm"><strong>7</strong><span>GORM Support</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#groovyPreconditions"><strong>7</strong><span>Groovy Preconditions</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#dbdoc"><strong>8</strong><span>DbDoc Controller</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#gorm"><strong>8</strong><span>GORM Support</span></a></div>
+                                
+                                <div class="toc-item" style="margin-left:0"><a href="#dbdoc"><strong>9</strong><span>DbDoc Controller</span></a></div>
                                 
                             </div>
                         </div>
@@ -88,19 +90,23 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#gettingStarted"><strong>2</strong><span>Getting Started</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#releases"><strong>2</strong><span>Release History</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#configuration"><strong>3</strong><span>Configuration</span></a></div>
+                            <div class="toc-item" style="margin-left:10px"><a href="#6.x"><strong>2.1</strong><span>What's new in 6.x</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#generalUsage"><strong>4</strong><span>General Usage</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#gettingStarted"><strong>3</strong><span>Getting Started</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#groovyChanges"><strong>5</strong><span>Groovy Changes</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#configuration"><strong>4</strong><span>Configuration</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#groovyPreconditions"><strong>6</strong><span>Groovy Preconditions</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#generalUsage"><strong>5</strong><span>General Usage</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#gorm"><strong>7</strong><span>GORM Support</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#groovyChanges"><strong>6</strong><span>Groovy Changes</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#dbdoc"><strong>8</strong><span>DbDoc Controller</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#groovyPreconditions"><strong>7</strong><span>Groovy Preconditions</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#gorm"><strong>8</strong><span>GORM Support</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#dbdoc"><strong>9</strong><span>DbDoc Controller</span></a></div>
                             
                             <div style="clear:both" ></div>
                         </div>
@@ -142,7 +148,819 @@ function addJsClass(el) {
 </div>
 
 
-<h1 id="gettingStarted"><a class="anchor" href="#gettingStarted"></a>2 Getting Started</h1>
+<h1 id="releases"><a class="anchor" href="#releases"></a>2 Release History</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/releases.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>To make it easier for users to use and upgrade, Plugin adopts a version policy consistent with the <a href="https://github.com/graceframework/grace-framework">Grace Framework</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grace Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/6.3.x">6.3.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023.3.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/6.2.x">6.2.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023.2.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/6.1.x">6.1.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023.1.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/6.0.x">6.0.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023.0.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/5.2.x">5.2.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022.2.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/5.1.x">5.1.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022.1.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/graceframework/grace-database-migration/tree/5.0.x">5.0.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022.0.x</p></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2 id="6.x"><a class="anchor" href="#6.x"></a>2.1 What's new in 6.x</h2>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/releases/6.x.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="sect2">
+<h3 id="_6_3_0">6.3.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.3.0">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>⭐️ New Features</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup github docs workflows</p>
+</li>
+<li>
+<p>Use 'grace-doc' Gradle plugin to generate documentation <a href="https://github.com/graceframework/grace-database-migration/issues/64">#64</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README - Add document badge - Update badge versions - Remove Spring Boot badge - Simplify the description</p>
+</li>
+<li>
+<p>Remove jansi dependency for documentation</p>
+</li>
+<li>
+<p>Update github workflows - Upgrade to setup-gradle@v4</p>
+</li>
+<li>
+<p>Correct the project name</p>
+</li>
+<li>
+<p>Clean up build.grade and gradle.properties <a href="https://github.com/graceframework/grace-database-migration/issues/61">#61</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.3.0-RC2 <a href="https://github.com/graceframework/grace-database-migration/issues/63">#63</a></p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.3.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/58">#58</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.3.0 <a href="https://github.com/graceframework/grace-database-migration/issues/59">#59</a></p>
+</li>
+<li>
+<p>Upgrade to Gradle 8.14 <a href="https://github.com/graceframework/grace-database-migration/issues/62">#62</a></p>
+</li>
+<li>
+<p>Upgrade to Java Parser 3.26.4 <a href="https://github.com/graceframework/grace-database-migration/issues/65">#65</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_3_0_rc1">6.3.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.3.0-RC1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README Update badge versions of Grace, Groovy and Spring Boot</p>
+</li>
+<li>
+<p>Streamline Gradle build scripts: using the Spring Dependency Management Plugin to manage dependencies and versions <a href="https://github.com/graceframework/grace-database-migration/issues/57">#57</a></p>
+</li>
+<li>
+<p>Remove the unnecessary workaround for removing the generated extra dependencyManagement of POM <a href="https://github.com/graceframework/grace-database-migration/issues/56">#56</a></p>
+</li>
+<li>
+<p>Exclude transitive dependency on liquibase-commercial <a href="https://github.com/graceframework/grace-database-migration/issues/54">#54</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.3.0-M2 <a href="https://github.com/graceframework/grace-database-migration/issues/50">#50</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.3.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/51">#51</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.3.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/53">#53</a></p>
+</li>
+<li>
+<p>Upgrade to Gradle 8.13 <a href="https://github.com/graceframework/grace-database-migration/issues/55">#55</a></p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.26 <a href="https://github.com/graceframework/grace-database-migration/issues/52">#52</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.3.0-RC1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_3_0_m1">6.3.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.3.0-M1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>⭐️ New Features</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Migration Generator <a href="https://github.com/graceframework/grace-database-migration/issues/47">#47</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README Update badge versions of Grace and Spring Boot</p>
+</li>
+<li>
+<p>Update github workflows Switch to 6.3.x branch</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.3.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/44">#44</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.3.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/48">#48</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.3.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/49">#49</a></p>
+</li>
+<li>
+<p>Upgrade to Liquibase 4.27.0 <a href="https://github.com/graceframework/grace-database-migration/issues/45">#45</a></p>
+</li>
+<li>
+<p>Upgrade to Liquibase Hibernate 4.27.0 <a href="https://github.com/graceframework/grace-database-migration/issues/46">#46</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.3.0-M1</p>
+</li>
+<li>
+<p>Set version to 6.3.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_0">6.2.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.2.0">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update GitHub issue template <a href="https://github.com/graceframework/grace-database-migration/issues/39">#39</a></p>
+</li>
+<li>
+<p>Update build scripts to avoid deprecation warnings with Gradle 8 <a href="https://github.com/graceframework/grace-database-migration/issues/38">#38</a></p>
+</li>
+<li>
+<p>Update GitHub issue template <a href="https://github.com/graceframework/grace-database-migration/issues/37">#37</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.2.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/40">#40</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.2.0 <a href="https://github.com/graceframework/grace-database-migration/issues/41">#41</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.2.0 <a href="https://github.com/graceframework/grace-database-migration/issues/42">#42</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.2.0</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_0_rc1">6.2.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.2.0-RC1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Remove unused plugin <code>grace-gsp</code> <a href="https://github.com/graceframework/grace-database-migration/issues/35">#35</a></p>
+</li>
+<li>
+<p>Excludes demo classes in plugin jar <a href="https://github.com/graceframework/grace-database-migration/issues/34">#34</a></p>
+</li>
+<li>
+<p>Cleanup build scripts <a href="https://github.com/graceframework/grace-database-migration/issues/33">#33</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🐞 Bug Fixes</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update GitHub issue template <a href="https://github.com/graceframework/grace-database-migration/issues/37">#37</a></p>
+</li>
+<li>
+<p>Remove extra dependencyManagement of generated POM <a href="https://github.com/graceframework/grace-database-migration/issues/36">#36</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.2.0-M3 <a href="https://github.com/graceframework/grace-database-migration/issues/31">#31</a></p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.2.0-M2 <a href="https://github.com/graceframework/grace-database-migration/issues/28">#28</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.2.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/29">#29</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.2.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/30">#30</a></p>
+</li>
+<li>
+<p>Upgrade to Gradle 8.12 <a href="https://github.com/graceframework/grace-database-migration/issues/32">#32</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.2.0-RC1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_0_m1">6.2.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.2.0-M1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README Update badge of Grace to current version</p>
+</li>
+<li>
+<p>Update github workflows Switch to 6.2.x branch</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.2.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/22">#22</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.2.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/26">#26</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.2.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/27">#27</a></p>
+</li>
+<li>
+<p>Upgrade to H2 2.2.224 <a href="https://github.com/graceframework/grace-database-migration/issues/25">#25</a></p>
+</li>
+<li>
+<p>Upgrade to Liquibase 4.24.0 <a href="https://github.com/graceframework/grace-database-migration/issues/23">#23</a></p>
+</li>
+<li>
+<p>Upgrade to Liquibase Hibernate 4.24.0 <a href="https://github.com/graceframework/grace-database-migration/issues/24">#24</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.2.0-M1</p>
+</li>
+<li>
+<p>Set version to 6.2.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0">6.1.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.1.0">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update Badges</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/17">#17</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0 <a href="https://github.com/graceframework/grace-database-migration/issues/20">#20</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.1.0 <a href="https://github.com/graceframework/grace-database-migration/issues/19">#19</a></p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.24 <a href="https://github.com/graceframework/grace-database-migration/issues/18">#18</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_rc1">6.1.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.1.0-RC1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set Jar <code>archiveClassifier</code> to <code>plugin</code> <a href="https://github.com/graceframework/grace-database-migration/issues/16">#16</a></p>
+</li>
+<li>
+<p>Use Java 17 toolchain <a href="https://github.com/graceframework/grace-database-migration/issues/15">#15</a></p>
+</li>
+<li>
+<p>Upload artifact <code>grails-plugin.xml</code> with plugin <a href="https://github.com/graceframework/grace-database-migration/issues/14">#14</a></p>
+</li>
+<li>
+<p>Upgrade to Gradle Nexus Publish Plugin 2.0.0 <a href="https://github.com/graceframework/grace-database-migration/issues/13">#13</a></p>
+</li>
+<li>
+<p>build: Convert indentation to Spaces</p>
+</li>
+<li>
+<p>Use <code>gradlePluginPortal()</code> <a href="https://github.com/graceframework/grace-database-migration/issues/12">#12</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-M3 <a href="https://github.com/graceframework/grace-database-migration/issues/9">#9</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/10">#10</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.1.0-RC1 <a href="https://github.com/graceframework/grace-database-migration/issues/11">#11</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-RC1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_m3">6.1.0-M3</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.1.0-M3">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-M2 <a href="https://github.com/graceframework/grace-database-migration/issues/6">#6</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0-M3 <a href="https://github.com/graceframework/grace-database-migration/issues/7">#7</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.1.0-M3 <a href="https://github.com/graceframework/grace-database-migration/issues/8">#8</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-M3</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_m2">6.1.0-M2</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.1.0-M2">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Grace 2023.1.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/3">#3</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data 2023.1.0-M2 <a href="https://github.com/graceframework/grace-database-migration/issues/4">#4</a></p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.1.0-M2 <a href="https://github.com/graceframework/grace-database-migration/issues/5">#5</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-M2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_1_0_m1">6.1.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.1.0-M1">release notes</a></p>
+</div>
+<div class="paragraph">
+<p>🛠 Improvements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Excludes <code>opencsv</code> and <code>javax.xml.bind:jaxb-api</code> of <code>liquibase-core</code></p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚀 Dependency Upgrades</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Liquibase 4.20.0 <a href="https://github.com/graceframework/grace-database-migration/issues/2">#2</a></p>
+</li>
+<li>
+<p>Upgrade to GORM Hibernate 2023.1.0-M1 <a href="https://github.com/graceframework/grace-database-migration/issues/1">#1</a></p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.23</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.2</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>⚙️ Tasks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.1.0-M1</p>
+</li>
+<li>
+<p>Update github workflows</p>
+</li>
+<li>
+<p>Set version to 6.1.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_1">6.0.1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.0.1">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.1</p>
+</li>
+<li>
+<p>Required Grace version should be <code>2023.0.0 &gt; *</code></p>
+</li>
+<li>
+<p>Upgrade to Gradle Wrapper 7.6.4</p>
+</li>
+<li>
+<p>Upgrade to GORM Hibernate 2023.0.1</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0</p>
+</li>
+<li>
+<p>Set version to 6.0.1-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0">6.0.0</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.0.0">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0</p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.0.0</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.22</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-RC2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_rc1">6.0.0-RC1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.0.0-RC1">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-RC1</p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.0.0-RC1</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.21</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M7</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_m3">6.0.0-M3</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.0.0-M3">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-M3</p>
+</li>
+<li>
+<p>Fixes Groovy STC error</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.12</p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.0.0-M5</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M6</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_m2">6.0.0-M2</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.0.0-M2">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-M2</p>
+</li>
+<li>
+<p>Upgrade to Grace GORM Hibernate 2023.0.0-M4</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M5</p>
+</li>
+<li>
+<p>Fixes execute command [dbm-create-changelog] error</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_0_0_m1">6.0.0-M1</h3>
+<div class="paragraph">
+<p><a href="https://github.com/graceframework/grace-database-migration/releases/tag/v6.0.0-M1">release notes</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Release v6.0.0-M1</p>
+</li>
+<li>
+<p>Use hibernate-core-jakarta</p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.0.0-M3</p>
+</li>
+<li>
+<p>Migrate to Groovy 3</p>
+</li>
+<li>
+<p>Migrate to Jakarta Servlet API 6.0</p>
+</li>
+<li>
+<p>Upgrade to Groovy 4.0.11</p>
+</li>
+<li>
+<p>Upgrade to Grace Data Hibernate 2023.0.0-M2</p>
+</li>
+<li>
+<p>Upgrade to Grace 2023.0.0-M2</p>
+</li>
+<li>
+<p>Grace: update github workflows</p>
+</li>
+<li>
+<p>Set version to 6.0.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+<h1 id="gettingStarted"><a class="anchor" href="#gettingStarted"></a>3 Getting Started</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/gettingStarted.adoc"'>
@@ -291,7 +1109,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 
 
-<h1 id="configuration"><a class="anchor" href="#configuration"></a>3 Configuration</h1>
+<h1 id="configuration"><a class="anchor" href="#configuration"></a>4 Configuration</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/configuration.adoc"'>
@@ -465,7 +1283,7 @@ grails.plugin.databasemigration.changelogFileName = changelog.groovy</code></pre
 </div>
 
 
-<h1 id="generalUsage"><a class="anchor" href="#generalUsage"></a>4 General Usage</h1>
+<h1 id="generalUsage"><a class="anchor" href="#generalUsage"></a>5 General Usage</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/generalUsage.adoc"'>
@@ -625,7 +1443,7 @@ beans = {
 </div>
 
 
-<h1 id="groovyChanges"><a class="anchor" href="#groovyChanges"></a>5 Groovy Changes</h1>
+<h1 id="groovyChanges"><a class="anchor" href="#groovyChanges"></a>6 Groovy Changes</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/groovyChanges.adoc"'>
@@ -767,7 +1585,7 @@ beans = {
 </div>
 
 
-<h1 id="groovyPreconditions"><a class="anchor" href="#groovyPreconditions"></a>6 Groovy Preconditions</h1>
+<h1 id="groovyPreconditions"><a class="anchor" href="#groovyPreconditions"></a>7 Groovy Preconditions</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/groovyPreconditions.adoc"'>
@@ -888,7 +1706,7 @@ beans = {
 </div>
 
 
-<h1 id="gorm"><a class="anchor" href="#gorm"></a>7 GORM Support</h1>
+<h1 id="gorm"><a class="anchor" href="#gorm"></a>8 GORM Support</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/gorm.adoc"'>
@@ -948,7 +1766,7 @@ beans = {
 </div>
 
 
-<h1 id="dbdoc"><a class="anchor" href="#dbdoc"></a>8 DbDoc Controller</h1>
+<h1 id="dbdoc"><a class="anchor" href="#dbdoc"></a>9 DbDoc Controller</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/graceframework/grace-database-migration/edit/6.3.x/src/docs/guide/dbdoc.adoc"'>
