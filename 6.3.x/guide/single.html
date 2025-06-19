@@ -157,15 +157,15 @@ function addJsClass(el) {
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">buildscript {
-   dependencies {
-      ...
-      classpath 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
-   }
+    dependencies {
+        ...
+        classpath 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
+    }
 }
 
 dependencies {
-   ...
-     implementation 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
+    ...
+    implementation 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
 }</code></pre>
 </div>
 </div>
@@ -175,8 +175,8 @@ dependencies {
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">dependencies {
-   ...
-     implementation 'org.liquibase:liquibase-core'
+    ...
+    implementation 'org.liquibase:liquibase-core'
 }</code></pre>
 </div>
 </div>
@@ -209,7 +209,7 @@ dependencies {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-changelog changelog.groovy</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-changelog changelog.groovy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -217,7 +217,7 @@ dependencies {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-changelog changelog.xml</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-changelog changelog.xml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -245,7 +245,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-changelog-sync</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-changelog-sync</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -256,7 +256,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-gorm-changelog changelog.groovy</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-gorm-changelog changelog.groovy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -264,7 +264,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-gorm-changelog changelog.xml</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-gorm-changelog changelog.xml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -272,7 +272,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-update</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-update</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -280,7 +280,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-changelog-sync</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-changelog-sync</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -596,17 +596,17 @@ grails.plugin.databasemigration.changelogFileName = changelog.groovy</code></pre
 
 <span class="type">class</span> <span class="class">MigrationCallbacks</span> {
 
-   <span class="type">void</span> beforeStartMigration(Database Database) {
-      ...
-   }
+    <span class="type">void</span> beforeStartMigration(Database Database) {
+        ...
+    }
 
-   <span class="type">void</span> onStartMigration(Database database, Liquibase liquibase, <span class="predefined-type">String</span> changelogName) {
-      ...
-   }
+    <span class="type">void</span> onStartMigration(Database database, Liquibase liquibase, <span class="predefined-type">String</span> changelogName) {
+        ...
+    }
 
-   <span class="type">void</span> afterMigrations(Database Database) {
-      ...
-   }
+    <span class="type">void</span> afterMigrations(Database Database) {
+        ...
+    }
 }</code></pre>
 </div>
 </div>
@@ -618,7 +618,7 @@ grails.plugin.databasemigration.changelogFileName = changelog.groovy</code></pre
 <pre class="CodeRay highlight"><code data-lang="groovy"><span class="keyword">import</span> <span class="include">com.mycompany.myapp.MigrationCallbacks</span>
 
 beans = {
-   migrationCallbacks(MigrationCallbacks)
+    migrationCallbacks(MigrationCallbacks)
 }</code></pre>
 </div>
 </div>
@@ -649,41 +649,41 @@ beans = {
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">databaseChangeLog = {
 
-   changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
+    changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
 
-      grailsChange {
-         init {
-             <span class="comment">// arbitrary initialization code; note that no</span>
-             <span class="comment">// database or connection is available</span>
-         }
+        grailsChange {
+            init {
+                <span class="comment">// arbitrary initialization code; note that no</span>
+                <span class="comment">// database or connection is available</span>
+            }
 
-         validate {
-            <span class="comment">// can call warn(String message) to log a warning</span>
-            <span class="comment">// or error(String message) to stop processing</span>
-         }
+            validate {
+                <span class="comment">// can call warn(String message) to log a warning</span>
+                <span class="comment">// or error(String message) to stop processing</span>
+            }
 
-         change {
-            <span class="comment">// arbitrary code; make changes directly and/or return a</span>
-            <span class="comment">// SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
-            <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
+            change {
+                <span class="comment">// arbitrary code; make changes directly and/or return a</span>
+                <span class="comment">// SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
+                <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
 
-            confirm <span class="string"><span class="delimiter">'</span><span class="content">change confirmation message</span><span class="delimiter">'</span></span>
-         }
+                confirm <span class="string"><span class="delimiter">'</span><span class="content">change confirmation message</span><span class="delimiter">'</span></span>
+            }
 
-         rollback {
-            <span class="comment">// arbitrary code; make rollback changes directly and/or</span>
-            <span class="comment">// return a SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
-            <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
+            rollback {
+                <span class="comment">// arbitrary code; make rollback changes directly and/or</span>
+                <span class="comment">// return a SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
+                <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
 
-            confirm <span class="string"><span class="delimiter">'</span><span class="content">rollback confirmation message</span><span class="delimiter">'</span></span>
-         }
+                confirm <span class="string"><span class="delimiter">'</span><span class="content">rollback confirmation message</span><span class="delimiter">'</span></span>
+            }
 
-         confirm <span class="string"><span class="delimiter">'</span><span class="content">confirmation message</span><span class="delimiter">'</span></span>
+            confirm <span class="string"><span class="delimiter">'</span><span class="content">confirmation message</span><span class="delimiter">'</span></span>
 
-         checkSum <span class="string"><span class="delimiter">'</span><span class="content">override value for checksum</span><span class="delimiter">'</span></span>
-      }
+            checkSum <span class="string"><span class="delimiter">'</span><span class="content">override value for checksum</span><span class="delimiter">'</span></span>
+        }
 
-   }
+    }
 }</code></pre>
 </div>
 </div>
@@ -788,35 +788,34 @@ beans = {
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">databaseChangeLog = {
 
-   changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
+    changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
 
-      preConditions {
+        preConditions {
 
-         grailsPrecondition {
+            grailsPrecondition {
 
-            check {
+                check {
+                    <span class="comment">// use an assertion</span>
+                    <span class="keyword">assert</span> x == x
 
-               <span class="comment">// use an assertion</span>
-               <span class="keyword">assert</span> x == x
+                    <span class="comment">// use an assertion with an error message</span>
+                    <span class="keyword">assert</span> y == y : <span class="string"><span class="delimiter">'</span><span class="content">value cannot be 237</span><span class="delimiter">'</span></span>
 
-               <span class="comment">// use an assertion with an error message</span>
-               <span class="keyword">assert</span> y == y : <span class="string"><span class="delimiter">'</span><span class="content">value cannot be 237</span><span class="delimiter">'</span></span>
+                    <span class="comment">// call the fail method</span>
+                    <span class="keyword">if</span> (x != x) {
+                        fail <span class="string"><span class="delimiter">'</span><span class="content">x != x</span><span class="delimiter">'</span></span>
+                    }
 
-               <span class="comment">// call the fail method</span>
-               <span class="keyword">if</span> (x != x) {
-                  fail <span class="string"><span class="delimiter">'</span><span class="content">x != x</span><span class="delimiter">'</span></span>
-               }
+                    <span class="comment">// throw an exception (the fail method is preferred)</span>
+                    <span class="keyword">if</span> (y != y) {
+                        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">'</span><span class="content">y != y</span><span class="delimiter">'</span></span>)
+                    }
+                }
 
-               <span class="comment">// throw an exception (the fail method is preferred)</span>
-               <span class="keyword">if</span> (y != y) {
-                  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">'</span><span class="content">y != y</span><span class="delimiter">'</span></span>)
-               }
             }
 
-         }
-
-      }
-   }
+        }
+    }
 }</code></pre>
 </div>
 </div>

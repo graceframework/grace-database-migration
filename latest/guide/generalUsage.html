@@ -234,17 +234,17 @@ function addJsClass() {
 
 <span class="type">class</span> <span class="class">MigrationCallbacks</span> {
 
-   <span class="type">void</span> beforeStartMigration(Database Database) {
-      ...
-   }
+    <span class="type">void</span> beforeStartMigration(Database Database) {
+        ...
+    }
 
-   <span class="type">void</span> onStartMigration(Database database, Liquibase liquibase, <span class="predefined-type">String</span> changelogName) {
-      ...
-   }
+    <span class="type">void</span> onStartMigration(Database database, Liquibase liquibase, <span class="predefined-type">String</span> changelogName) {
+        ...
+    }
 
-   <span class="type">void</span> afterMigrations(Database Database) {
-      ...
-   }
+    <span class="type">void</span> afterMigrations(Database Database) {
+        ...
+    }
 }</code></pre>
 </div>
 </div>
@@ -256,7 +256,7 @@ function addJsClass() {
 <pre class="CodeRay highlight"><code data-lang="groovy"><span class="keyword">import</span> <span class="include">com.mycompany.myapp.MigrationCallbacks</span>
 
 beans = {
-   migrationCallbacks(MigrationCallbacks)
+    migrationCallbacks(MigrationCallbacks)
 }</code></pre>
 </div>
 </div>

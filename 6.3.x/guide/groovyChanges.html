@@ -127,41 +127,41 @@ function addJsClass() {
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">databaseChangeLog = {
 
-   changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
+    changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
 
-      grailsChange {
-         init {
-             <span class="comment">// arbitrary initialization code; note that no</span>
-             <span class="comment">// database or connection is available</span>
-         }
+        grailsChange {
+            init {
+                <span class="comment">// arbitrary initialization code; note that no</span>
+                <span class="comment">// database or connection is available</span>
+            }
 
-         validate {
-            <span class="comment">// can call warn(String message) to log a warning</span>
-            <span class="comment">// or error(String message) to stop processing</span>
-         }
+            validate {
+                <span class="comment">// can call warn(String message) to log a warning</span>
+                <span class="comment">// or error(String message) to stop processing</span>
+            }
 
-         change {
-            <span class="comment">// arbitrary code; make changes directly and/or return a</span>
-            <span class="comment">// SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
-            <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
+            change {
+                <span class="comment">// arbitrary code; make changes directly and/or return a</span>
+                <span class="comment">// SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
+                <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
 
-            confirm <span class="string"><span class="delimiter">'</span><span class="content">change confirmation message</span><span class="delimiter">'</span></span>
-         }
+                confirm <span class="string"><span class="delimiter">'</span><span class="content">change confirmation message</span><span class="delimiter">'</span></span>
+            }
 
-         rollback {
-            <span class="comment">// arbitrary code; make rollback changes directly and/or</span>
-            <span class="comment">// return a SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
-            <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
+            rollback {
+                <span class="comment">// arbitrary code; make rollback changes directly and/or</span>
+                <span class="comment">// return a SqlStatement using the sqlStatement(SqlStatement sqlStatement)</span>
+                <span class="comment">// method or multiple with sqlStatements(List sqlStatements)</span>
 
-            confirm <span class="string"><span class="delimiter">'</span><span class="content">rollback confirmation message</span><span class="delimiter">'</span></span>
-         }
+                confirm <span class="string"><span class="delimiter">'</span><span class="content">rollback confirmation message</span><span class="delimiter">'</span></span>
+            }
 
-         confirm <span class="string"><span class="delimiter">'</span><span class="content">confirmation message</span><span class="delimiter">'</span></span>
+            confirm <span class="string"><span class="delimiter">'</span><span class="content">confirmation message</span><span class="delimiter">'</span></span>
 
-         checkSum <span class="string"><span class="delimiter">'</span><span class="content">override value for checksum</span><span class="delimiter">'</span></span>
-      }
+            checkSum <span class="string"><span class="delimiter">'</span><span class="content">override value for checksum</span><span class="delimiter">'</span></span>
+        }
 
-   }
+    }
 }</code></pre>
 </div>
 </div>

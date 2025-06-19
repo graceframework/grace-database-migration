@@ -124,35 +124,34 @@ function addJsClass() {
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">databaseChangeLog = {
 
-   changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
+    changeSet(<span class="key">author</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>, <span class="key">id</span>: <span class="string"><span class="delimiter">'</span><span class="content">...</span><span class="delimiter">'</span></span>) {
 
-      preConditions {
+        preConditions {
 
-         grailsPrecondition {
+            grailsPrecondition {
 
-            check {
+                check {
+                    <span class="comment">// use an assertion</span>
+                    <span class="keyword">assert</span> x == x
 
-               <span class="comment">// use an assertion</span>
-               <span class="keyword">assert</span> x == x
+                    <span class="comment">// use an assertion with an error message</span>
+                    <span class="keyword">assert</span> y == y : <span class="string"><span class="delimiter">'</span><span class="content">value cannot be 237</span><span class="delimiter">'</span></span>
 
-               <span class="comment">// use an assertion with an error message</span>
-               <span class="keyword">assert</span> y == y : <span class="string"><span class="delimiter">'</span><span class="content">value cannot be 237</span><span class="delimiter">'</span></span>
+                    <span class="comment">// call the fail method</span>
+                    <span class="keyword">if</span> (x != x) {
+                        fail <span class="string"><span class="delimiter">'</span><span class="content">x != x</span><span class="delimiter">'</span></span>
+                    }
 
-               <span class="comment">// call the fail method</span>
-               <span class="keyword">if</span> (x != x) {
-                  fail <span class="string"><span class="delimiter">'</span><span class="content">x != x</span><span class="delimiter">'</span></span>
-               }
+                    <span class="comment">// throw an exception (the fail method is preferred)</span>
+                    <span class="keyword">if</span> (y != y) {
+                        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">'</span><span class="content">y != y</span><span class="delimiter">'</span></span>)
+                    }
+                }
 
-               <span class="comment">// throw an exception (the fail method is preferred)</span>
-               <span class="keyword">if</span> (y != y) {
-                  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">'</span><span class="content">y != y</span><span class="delimiter">'</span></span>)
-               }
             }
 
-         }
-
-      }
-   }
+        }
+    }
 }</code></pre>
 </div>
 </div>

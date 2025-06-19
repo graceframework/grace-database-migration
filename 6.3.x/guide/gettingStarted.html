@@ -118,15 +118,15 @@ function addJsClass() {
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">buildscript {
-   dependencies {
-      ...
-      classpath 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
-   }
+    dependencies {
+        ...
+        classpath 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
+    }
 }
 
 dependencies {
-   ...
-     implementation 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
+    ...
+    implementation 'org.graceframework.plugins:database-migration:6.3.0-SNAPSHOT'
 }</code></pre>
 </div>
 </div>
@@ -136,8 +136,8 @@ dependencies {
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="groovy">dependencies {
-   ...
-     implementation 'org.liquibase:liquibase-core'
+    ...
+    implementation 'org.liquibase:liquibase-core'
 }</code></pre>
 </div>
 </div>
@@ -170,7 +170,7 @@ dependencies {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-changelog changelog.groovy</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-changelog changelog.groovy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -178,7 +178,7 @@ dependencies {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-changelog changelog.xml</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-changelog changelog.xml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -206,7 +206,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-changelog-sync</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-changelog-sync</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -217,7 +217,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-gorm-changelog changelog.groovy</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-gorm-changelog changelog.groovy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -225,7 +225,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-generate-gorm-changelog changelog.xml</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-generate-gorm-changelog changelog.xml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -233,7 +233,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-update</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-update</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -241,7 +241,7 @@ If you use the XML format (or use a non-default Groovy filename), be sure to cha
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="groovy">grace dbm-changelog-sync</code></pre>
+<pre class="CodeRay highlight"><code data-lang="console">$ grace dbm-changelog-sync</code></pre>
 </div>
 </div>
 <div class="paragraph">
